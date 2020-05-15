@@ -90,11 +90,11 @@ void parse_instruction(std::string temp, std::ofstream &ofs, Pathfinder* aptr) {
 	else if (command == "solveMaze") { // command to solve the maze and return a correct path if possible
 		std::string originalMaze = aptr->toString();
 		vector<std::string> pathVec = aptr->solveMaze(); // get the path vector returned by the student
-		if(originalMaze != aptr->toString()){
+		if (originalMaze != aptr->toString()) {
 			ofs << temp << "\nINVALID solution. Maze has been altered from: \n" << originalMaze
 				<< "\n...to: \n\n" << aptr->toString() << std::endl;
 		}
-		else{
+		else {
 			ofs << temp << " " << is_valid_path(pathVec, aptr->toString()) << std::endl;
 		}
 
@@ -145,7 +145,7 @@ std::string is_valid_path(vector<string> &vec, std::string mazeString) {
 	if (vec.size() > 0 && vec[0] != "(0, 0, 0)") {
 		return "INVALID path given, path must begin at cell (0, 0, 0)\n" + pathSS.str();
 	}
-	if(vec[vec.size()-1] != "(4, 4, 4)"){
+	if (vec[vec.size() - 1] != "(4, 4, 4)") {
 		return "INVALID path given, path must end at cell (4, 4, 4)\n" + pathSS.str();
 	}
 
