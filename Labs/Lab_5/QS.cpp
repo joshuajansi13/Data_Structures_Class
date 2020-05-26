@@ -113,6 +113,7 @@ bool QS::createArray(int capacity) {
 	num_items = 0;
 	table = new int[capacity];
 	max_items = capacity;
+	return true;
 }
 
 void QS::clear() {
